@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    margin: 0;
+}
+
+.background-image {
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('2.png'); /* Reference to the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire area */
+    z-index: -1; /* Ensure it's behind other content */
+}
+.login-container {
+    background-color: rgba(225, 231, 231, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Add smooth transition effects */
+}
+h1:hover {
+    color: orangered; /* Change to your desired color */
+    transform: scale(1.05); /* Slightly enlarge the text */
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+.remember-me input {
+    margin-right: 10px;
+}
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5a67f2;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.login-btn:hover {
+    background-color: #434ea0;
+    background-color: #e76d09; /* Darker blue on hover */
+    border-color: #004085; /* Optional: change border color on hover for more emphasis*/
+    border: 1px solid black; /* Black border with a thickness of 2px */
+}
+    
+.forgot-password {
+    margin-top: 15px;
+    font-size: 14px;
+}
+.or-divider {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+    color: #888;
+}
+.or-divider:before,
+.or-divider:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ccc;
+}
+.or-divider:before {
+    left: 0;
+}
+.or-divider:after {
+    right: 0;
+}
+.social-login {
+    display: flex;
+    justify-content: space-around;
+}
+.social-login img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.back-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}

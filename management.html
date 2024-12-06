@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Interface</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light blue background color */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container styling */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header styling */
+        .header {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 30px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .header:hover {
+            color: #007BFF;
+            transform: scale(1.05);
+        }
+
+        /* Cool column design */
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .columns {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;    /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            background-color: #FFFDD0;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .column:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Item title styling */
+        .item-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(1);
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 15px 30px; /* Increased padding for a more prominent button */
+            font-size: 1.2rem;  /* Increased font size for better readability */
+            font-weight: bold;  /* Added bold weight */
+            color: #fff;
+            background-color: #007BFF; /* Primary button color */
+            border: none;
+            border-radius: 12px; /* Increased border-radius for a softer look */
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Added shadow for a 3D effect */
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
+            transform: translateY(-3px); /* Lift effect */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+        }
+
+        .btn:active {
+            transform: translateY(1px); /* Slight press effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 1 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Management Interface</h1>
+        <div class="columns">
+                <span class="item-title">Update Student List</span>
+                <button class="btn" onclick="window.location.href='update_student_list.html';">Update</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

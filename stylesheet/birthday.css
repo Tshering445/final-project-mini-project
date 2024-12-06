@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+.background-image {
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('2.png'); /* Reference to the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire area */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(225, 231, 231, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.container h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.already-account {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.continue-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.continue-btn:hover {
+    background-color: #00cc66;
+}
+
+.bottom-text {
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+}
+
+.bottom-text a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.bottom-text a:hover {
+    text-decoration: underline;
+}

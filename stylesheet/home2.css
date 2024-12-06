@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #d16ba5, #86a8e7, #5ffbf1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-image {
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('2.png'); /* Reference to the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire area */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a white background with some transparency */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Internal padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow to lift the box */
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.card {
+    background-color: #2E3B8E; /* Card background color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Internal padding for cards */
+    margin-bottom: 20px; /* Space between cards */
+    display: flex; /* Flexbox for card layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between items horizontally */
+    color: white; /* Card text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the cards */
+}
+
+.card img.icon {
+    width: 50px; /* Icon width */
+    height: 50px; /* Icon height */
+}
+
+.card .text {
+    font-size: 18px; /* Text size */
+    font-weight: bold; /* Text weight */
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4f59ed;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: #e76d09;
+    border-color: #004085; /* Optional: change border color on hover for more emphasis*/
+    border: 1px solid black; /* Black border with a thickness of 2px */
+
+}
+.menu-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 55px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #f1f1f1;
+}
+
+.side-menu .close-button {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menu-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}

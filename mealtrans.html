@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule and Transaction Interface</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 180px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            background-color: #1c598d;
+            transform: scale(1);
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to the Dashboard</h1>
+
+    <div class="btn-container">
+        <button class="btn" onclick="scheduleFunction()">Schedule</button>
+        <button class="btn" onclick="transactionFunction()">Transaction</button>
+    </div>
+</div>
+
+<script>
+    // Function to handle Schedule button click
+    function scheduleFunction() {
+        alert('Schedule functionality will be implemented here.');
+        // You can redirect to another page or show a new section, e.g.:
+        window.location.href = 'meals_schedule.html';
+    }
+
+    // Function to handle Transaction button click
+    function transactionFunction() {
+        alert('Transaction functionality will be implemented here.');
+        // You can redirect to another page or show a new section, e.g.:
+        window.location.href = '/public/management1.html';
+    }
+</script>
+
+</body>
+</html>

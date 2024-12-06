@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f79489, #603bb3);
+}
+.background-image {
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('2.png'); /* Reference to the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire area */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+
+.header {
+    background-color: #f6a441;
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center; /* Center the text inside the header */
+    width: fit-content; /* Adjust the width to fit the content */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Add smooth transition effects */
+}
+.header:hover {
+    color: black; /* Change to your desired color */
+    transform: scale(1.05); /* Slightly enlarge the text */
+}
+.role-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4f59ed;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.role-button:hover {
+    background-color: #e76d09;
+    border-color: #004085; /* Optional: change border color on hover for more emphasis*/
+    border: 1px solid black; /* Black border with a thickness of 2px */
+
+}
+
+.role-button span {
+    flex: 1;
+}
+
+.role-button img {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}

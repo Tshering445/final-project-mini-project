@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Meal Interface</title>
+    <link rel="stylesheet" href="stylesheet/meal.css">
+</head>
+<body>
+    <img class="background-image" src="j.jpg" alt="jnecPIc">
+    <div class="container">
+        <div class="calendar">
+            <div class="date">
+                <p id="day-name">Wed</p>
+                <p id="month-year">June 2024</p>
+                <p><strong id="day-number">29</strong></p>
+                <p id="time">12:00 PM</p>
+            </div>
+            <button class="today-button" disabled>Today</button>
+        </div>
+
+        <div class="meal-time">
+            <p>Breakfast</p>
+            <div class="meal-card" id="breakfast-meals">Meals</div>
+        </div>
+
+        <div class="meal-time">
+            <p>Lunch</p>
+            <div class="meal-card" id="lunch-meals">Meals</div>
+        </div>
+
+        <div class="meal-time">
+            <p>Dinner</p>
+            <div class="meal-card" id="dinner-meals">Meals</div>
+        </div>
+    </div>
+
+    <script>
+        // Function to display meals from localStorage
+        window.onload = function() {
+            displayMeals('Breakfast');
+            displayMeals('Lunch');
+            displayMeals('Dinner');
+        }
+
+        function displayMeals(mealType) {
+            const meals = JSON.parse(localStorage.getItem(mealType)) || [];
+            const mealCard = document.getElementById(`${mealType.toLowerCase()}-meals`);
+            mealCard.innerHTML = meals.length ? meals.join('<br>') : 'No meals available.';
+        }
+    </script>
+</body>
+</html>

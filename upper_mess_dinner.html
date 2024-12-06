@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        #search-bar {
+            width: calc(100% - 90px);
+            padding: 8px;
+        }
+
+        #search-button {
+            padding: 8px 12px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #search-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Upper Mess Dinner</h2>
+
+        <div class="button-container">
+            <input type="text" id="search-bar" placeholder="Search student...">
+            <button id="search-button">Search</button>
+        </div>
+
+        <table id="student-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Food Preference</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Student rows will go here -->
+            </tbody>
+        </table>
+
+        <div class="button-container">
+            <button class="btn" id="add-btn">Add Student</button>
+        </div>
+    </div>
+
+    <!-- Modal for Add/Edit Student -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Add Student</h2>
+            <input type="text" id="student-name" placeholder="Name" required>
+            <input type="email" id="student-email" placeholder="Email" required>
+            <input type="text" id="student-course" placeholder="Course" required>
+            <input type="text" id="student-food-preference" placeholder="Food Preference (Veg/Non-Veg)" required>
+            <button class="btn" id="save-student">Save Student</button>
+        </div>
+    </div>
+
+    <script>
+        const studentTableBody = document.getElementById('student-table').getElementsByTagName('tbody')[0];
+        const studentModal = document.getElementById('studentModal');
+        const closeModal = document.getElementsByClassName('close')[0];
+
+        let editMode = false;
+        let editRow;
+
+        document.getElementById('add-btn').addEventListener('click', () => {
+            document.getElementById('modal-title').innerText = "Add Student";
+            document.getElementById('student-name').value = '';
+            document.getElementById('student-email').value = '';
+            document.getElementById('student-course').value = '';
+            document.getElementById('student-food-preference').value = '';
+            editMode = false; // Set to add mode
+            studentModal.style.display = "block"; // Show the modal
+        });
+
+        closeModal.onclick = () => {
+            studentModal.style.display = "none"; // Hide the modal
+        }
+
+        window.onclick = (event) => {
+            if (event.target == studentModal) {
+                studentModal.style.display = "none"; // Hide the modal
+            }
+        }
+
+        document.getElementById('save-student').addEventListener('click', () => {
+            const name = document.getElementById('student-name').value;
+            const email = document.getElementById('student-email').value;
+            const course = document.getElementById('student-course').value;
+            const foodPreference = document.getElementById('student-food-preference').value;
+
+            if (editMode && editRow) {
+                // Update the existing row
+                editRow.cells[0].innerText = name;
+                editRow.cells[1].innerText = email;
+                editRow.cells[2].innerText = course;
+                editRow.cells[3].innerText = foodPreference;
+            } else {
+                // Add new row
+                const newRow = studentTableBody.insertRow();
+                newRow.innerHTML = `
+                    <td>${name}</td>
+                    <td>${email}</td>
+                    <td>${course}</td>
+                    <td>${foodPreference}</td>
+                    <td>
+                        <button class="btn" onclick="editStudent(this)">Edit</button>
+                        <button class="delete-btn" onclick="deleteStudent(this)">Delete</button>
+                    </td>
+                `;
+            }
+
+            studentModal.style.display = "none"; // Hide the modal after saving
+        });
+
+        function editStudent(button) {
+            const row = button.parentNode.parentNode;
+            editRow = row; // Save the row for editing
+            document.getElementById('modal-title').innerText = "Edit Student";
+            document.getElementById('student-name').value = row.cells[0].innerText;
+            document.getElementById('student-email').value = row.cells[1].innerText;
+            document.getElementById('student-course').value = row.cells[2].innerText;
+            document.getElementById('student-food-preference').value = row.cells[3].innerText;
+            editMode = true; // Set to edit mode
+            studentModal.style.display = "block"; // Show the modal
+        }
+
+        function deleteStudent(button) {
+            if (confirm("Are you sure you want to delete this student?")) {
+                const row = button.parentNode.parentNode;
+                studentTableBody.deleteRow(row.rowIndex - 1); // Adjust for header row
+            }
+        }
+
+        document.getElementById('search-button').addEventListener('click', () => {
+            const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+            const rows = studentTableBody.getElementsByTagName('tr');
+
+            for (let i = 0; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let found = false;
+
+                for (let j = 0; j < cells.length - 1; j++) { // Exclude the last column (Actions)
+                    if (cells[j].innerText.toLowerCase().includes(searchTerm)) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Stock and Financial System</title>
+    <link rel="stylesheet" href="stylesheet/welcome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<style>
+    html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background-image {
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('2.png'); /* Reference to the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire area */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.container {
+    position: absolute; /* Change to absolute for centering */
+    top: 50%; /* Move down 50% from the top of the viewport */
+    left: 50%; /* Move right 50% from the left of the viewport */
+    transform: translate(-50%, -50%); /* Translate back by 50% of its width and height to truly center it */
+    z-index: 1; /* Place the container above the background */
+    display: flex; /* Use flexbox for easy alignment */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    width: 500px; /* Set a specific width */
+    height: 300px; /* Set a specific height */
+    background-color: rgba(225, 231, 231, 0.8); /* Semi-transparent white background */
+    padding: 20px; /* Add some padding for spacing */
+    border-radius: 10px; /* Round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
+}
+.h1 {
+    margin-bottom: 20px; /* Space between title and buttons */
+    color: white;
+    padding: 3px 5px; /* Space between the text and border */
+    margin: 2px; /* Space between words */
+    display: inline-block; /* Keeps the spans inline and adds block behavior */
+    border-radius: 3px; /* Optional: rounded corners for the border */
+    color: black; /* Optional: text color */
+}
+
+.h1{
+    transition: color 0.3s ease, transform 0.3s ease; /* Add smooth transition effects */
+}
+
+.h1:hover {
+    color: orangered; /* Change to your desired color */
+    transform: scale(1.05); /* Slightly enlarge the text */
+}
+.btn {
+    padding: 10px 20px; /* Button padding */
+    margin: 5px; /* Space between buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    border: 1px solid black; /* Black border with a thickness of 2px */
+}
+.btn:hover {
+    background-color: #f55e00; /* Darker blue on hover */
+    border-color: #004085; /* Optional: change border color on hover for more emphasis*/
+}
+.login {
+    background-color: green; /* Green background */
+    color: white; /* White text */
+    width: 150px; /* Set a larger width */
+    height: 40px;
+}
+
+.signup {
+    background-color: green; /* green background */
+    color: white; /* White text */
+    width: 150px; /* Set a larger width */
+    height: 40px;
+}
+
+.btn:hover {
+    opacity: 0.9; /* Slight opacity change on hover */
+}
+
+</style>
+<body>
+    <img class="background-image" src="j.jpg" alt="jnecPIc">
+    <div class="container">
+        <h1 class="   ">Mess Stock and Financial System</h1><br><br><br>
+
+        <!-- Login Button with Font Awesome Icon -->
+        <button class="btn login" onclick="window.location.href='login.html';">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </button><br>
+
+        <!-- Sign Up Button with Font Awesome Icon -->
+        <button class="btn signup" onclick="window.location.href='signup.html';">
+            <i class="fas fa-user-plus"></i> Sign Up
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock and Bill Tracker - Read-Only</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #3498db;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+        }
+
+        td {
+            background-color: #fff;
+            font-size: 14px;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Stock and Bill Tracker</h1>
+
+    <h2>Stock Details</h2>
+    <table id="stockTable">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Stock rows will be inserted here -->
+        </tbody>
+    </table>
+
+    <h2>Bill Details</h2>
+    <table id="billTable">
+        <thead>
+            <tr>
+                <th>Bill Number</th>
+                <th>Customer Name</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bill rows will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Function to load stock and bill data from localStorage
+    function loadData() {
+        const stockData = JSON.parse(localStorage.getItem('stockData')) || [];
+        const billData = JSON.parse(localStorage.getItem('billData')) || [];
+
+        const stockTable = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
+        const billTable = document.getElementById('billTable').getElementsByTagName('tbody')[0];
+
+        // Clear existing rows
+        stockTable.innerHTML = '';
+        billTable.innerHTML = '';
+
+        // Populate stock table
+        stockData.forEach(item => {
+            const row = stockTable.insertRow();
+            row.innerHTML = `
+                <td>${item.product}</td>
+                <td>${item.quantity}</td>
+                <td>${item.price}</td>
+                <td>${item.total}</td>
+            `;
+        });
+
+        // Populate bill table
+        billData.forEach(item => {
+            const row = billTable.insertRow();
+            row.innerHTML = `
+                <td>${item.billNumber}</td>
+                <td>${item.customerName}</td>
+                <td>${item.date}</td>
+                <td>${item.totalAmount}</td>
+            `;
+        });
+    }
+
+    // Initial load of data
+    loadData();
+</script>
+
+</body>
+</html>

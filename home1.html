@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Selection</title>
+    <link rel="stylesheet" href="stylesheet/home1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Add spacing between the icon and text */
+        .role-button i {
+            margin-right: 10px; /* Adjust this value to control the spacing */
+        }
+    </style>
+</head>
+<body>
+    <img class="background-image" src="j.jpg" alt="jnecPIc">
+    <div class="container">
+        <div class="header">
+            Welcome! Please choose your role
+        </div>
+
+        <!-- Students button with Font Awesome icon -->
+        <button class="role-button" onclick="window.location.href='home3user.html';">
+            <i class="fas fa-user-graduate"></i>
+            <span>Students</span>
+        </button>
+
+        <!-- Administrator button with Font Awesome icon -->
+        <button class="role-button" onclick="window.location.href='code_admin.html';">
+            <i class="fas fa-user-cog"></i>
+            <span>Administrator</span>
+        </button>
+
+        <!-- Mess Coordinator button with Font Awesome icon -->
+        <button class="role-button" onclick="window.location.href='code_mess.html';">
+            <i class="fas fa-utensils"></i>
+            <span>Mess Coordinator</span>
+        </button>
+    </div>
+</body>
+</html>

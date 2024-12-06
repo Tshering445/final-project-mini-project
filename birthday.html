@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date of Birth</title>
+    <link rel="stylesheet" href="stylesheet/birthday.css">
+</head>
+<body>
+    <img class="background-image" src="j.jpg" alt="jnecPIc">
+
+    <div class="container">
+        <h1>What is your date of birth?</h1>
+        <p>Step 2 of 4</p>
+        <form onsubmit="event.preventDefault();window.location.href='email1.html';">
+            <input type="date" id="dob" name="dob" placeholder="Choose your date of birth">
+            
+            <p><a href="login.html">Already have an account? </a></p>
+
+            <button class="continue-btn">Continue</button>
+        </form>
+
+        <div class="bottom-text">
+            By tapping "Continue", you acknowledge that you have read the
+            <a href="#">privacy policy</a> and agree to the 
+            <a href="#">Terms of service</a>.
+        </div>
+    </div>
+</body>
+</html>

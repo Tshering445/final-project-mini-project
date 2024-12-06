@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif; /* Set all text to Times New Roman */
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            background-image: url('/pic.jpg'); /* Path to your image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ff6600; /* Set container background to orange */
+            border-radius: 10px; /* Rounded corners for the container */
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .text {
+            flex: 1;
+            padding: 20px;
+        }
+        .text h3 {
+            color: #ff6600; /* Set header color to orange */
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-align: center; /* Center the header */
+            font-weight: bold; /* Make the header bold */
+        }
+        .text p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .icon {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f4f7;
+            height: 250px;
+        }
+        .icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- About Us Section -->
+        <div class="section">
+            <div class="text">
+                <h3>About Us</h3>
+                <p>
+                    The college mess is committed to ensuring students have access to nutritious, hygienic, and delicious meals, 
+                    offering a diverse menu that caters to various dietary preferences. Managed by dedicated mess coordinators and 
+                    supported by the college administration, the mess operates efficiently with a team of cooks working in shifts. 
+                    Additionally, student counselors manage weekly shopping, maintain transparency by presenting detailed bills, and 
+                    allocate stipends effectively to meet students’ needs. Students can choose between dining in the mess or preparing 
+                    their own meals using fully-equipped kitchens on campus, promoting flexibility and self-sufficiency.
+                </p>
+            </div>
+            <div class="icon">
+                <img src="111111.png" alt="About Us">
+            </div>
+        </div>
+
+        <!-- Vision Section -->
+        <div class="section">
+            <div class="text">
+                <h3>Our Vision</h3>
+                <p>
+                    To create a model mess management system that ensures transparency, quality, and efficiency in delivering meals 
+                    while fostering student leadership, self-sufficiency, and healthy dietary practices.
+                </p>
+            </div>
+            <div class="icon">
+                <img src="44444.png" alt="Our Vision">
+            </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="section">
+            <div class="text">
+                <h3>Our Mission</h3>
+                <p>
+                    - To provide high-quality, hygienic, and nutritious meals to students. <br>
+                    - To ensure transparency in mess operations through detailed financial management and reporting. <br>
+                    - To empower students by involving them in the management of the mess, fostering leadership and accountability. <br>
+                    - To continuously enhance the mess facilities to meet the diverse needs and preferences of the student body.
+                </p>
+            </div>
+            <div class="icon">
+                <img src="33333.png" alt="Our Mission">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

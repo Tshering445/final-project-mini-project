@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff8e1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff7f50, #ff6347);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        /* Section styles */
+        section {
+            padding: 30px 20px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Menu Section */
+        .menu-items {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .menu-items .item {
+            text-align: center;
+            background-color: #ffe4b5;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .menu-items .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-items .item h3 {
+            font-size: 1.5rem;
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        .menu-items .item i {
+            font-size: 2.5rem;
+            color: #f39c12;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Icon movement */
+        .menu-items .item i:hover {
+            transform: rotate(360deg);
+            color: #f1c40f;
+        }
+
+        /* Booking Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form label {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        form input, form select, form textarea {
+            padding: 12px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: #e67e22;
+        }
+
+        form button {
+            background-color: #ff4500;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        form button:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+
+        /* Payment Buttons */
+        #payment button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        #payment button:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .menu-items .item {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-items .item {
+                width: 100%;
+            }
+
+            .menu-items h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        #carouselExample {
+            height: 500px; /* Adjust the height of the carousel */
+        }
+
+        #carouselExample .carousel-item img {
+            object-fit: cover; /* Ensure images cover the area without distortion */
+            height: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-utensils"></i> Mess Management System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Aboutus.html"><i class="fas fa-book-open"></i> About us</a></li>
+                <li><a href="mess mesh.html"><i class="fas fa-wallet"></i> Mess mesh</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+                <li><a href="welcome.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Section -->
+    <section>
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="item">
+                <i class="fas fa-bacon"></i>
+                <h3>Breakfast</h3>
+                <p>Start your day with a burst of energy! Our breakfast menu is designed to nourish and fuel your morning, giving you the right balance of vitamins, proteins, and healthy fats. Choose from a variety of dishes including freshly brewed coffee, hearty whole-grain toasts, protein-packed eggs, and vibrant fruit bowls. Whether you're looking for a quick bite or a more leisurely start to your day, our breakfast options are the perfect way to get you going.</p>
+            </div>
+            <div class="item">
+                <i class="fas fa-pizza-slice"></i>
+                <h3>Lunch</h3>
+                <p>Lunch is more than just a meal—it's a chance to refuel, recharge, and get ready to tackle the rest of the day. Our lunch menu offers a wide selection of wholesome and flavorful options to suit all tastes. From light salads to filling sandwiches, nutritious bowls, and hearty soups, there's something for everyone. Designed to keep you satisfied without feeling sluggish, our lunch choices are both delicious and energizing.</p>
+            </div>
+            <div class="item">
+                <i class="fas fa-ice-cream"></i>
+                <h3>Dinner</h3>
+                <p>Wind down your day with a comforting and satisfying dinner. Our dinner menu features wholesome meals that are light yet nourishing, offering a perfect balance for the evening. Enjoy fresh seafood, tender meats, hearty grains, and seasonal vegetables. Whether you're in the mood for something light like a fresh salad or a more indulgent dish, our dinner options ensure you'll end your day on a high note. Perfect for those who want a delicious and healthy way to relax and unwind.
+
+                    Feel free to modify or expand these descriptions depending on your needs!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="carousel">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="DJI_0008-scaled.jpg" class="d-block w-100" alt="Menu 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Delicious Breakfast</h5>
+                        <p>Start your day with healthy and energizing meals.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="BIF-1-1080x675.jpg" class="d-block w-100" alt="Menu 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Nourishing Lunch</h5>
+                        <p>A balanced selection to keep you full and energized.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Mess-Facilities.jpg" class="d-block w-100" alt="Menu 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Wholesome Dinner</h5>
+                        <p>Finish your day with light yet satisfying meals.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mess Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

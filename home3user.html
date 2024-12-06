@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Schedule & Transaction Details</title>
+    <link rel="stylesheet" href="stylesheet/home2.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <img class="background-image" src="j.jpg" alt="jnecPIc">
+    <!-- Menu button on the top left corner -->
+    <button class="menu-button" onclick="openMenu()">&#9776;</button>
+    
+    <!-- Side navigation menu -->
+    <div id="mySideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-button" onclick="closeMenu()">&times;</a>
+        <img src="ccc.png" alt="Menu Image" class="menu-image"><br><br> 
+        
+        <a href="home1.html">Home</a>
+        <a href="#">Setting</a>
+        <a href="#">Privacy and Security</a>
+        <a href="welcome.html">logout</a>
+    </div>
+
+    <div class="container">
+        <div class="card mess-schedule" onclick="window.location.href='meal.html';">meal Schedule</button>>
+            <img src="burger-with-melted-cheese.jpg" alt="Mess Icon" class="icon">
+        </div>
+        
+        <div class="card mess-schedule" onclick="window.location.href='/public/transaction.html';">Transaction Detail</button>>
+            <img src="wallet.jpeg" alt="Transaction Icon" class="icon">
+        </div>
+    </div>
+    <script>
+        function openMenu() {
+            document.getElementById("mySideMenu").style.width = "250px";
+        }
+
+        function closeMenu() {
+            document.getElementById("mySideMenu").style.width = "0";
+        }
+    </script>
+</body>
+</html>

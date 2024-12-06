@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #9b59b6, #e74c3c, #ecf0f1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .background-image {
+    position: absolute; /* Use absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('2.png'); /* Reference to the image */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire area */
+    z-index: -1; /* Ensure it's behind other content */
+  }
+  
+  .container {
+    width: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .date p {
+    margin: 5px;
+    color: #555;
+    text-align: center;
+  }
+  
+  .today-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff7979;
+    color: white;
+    border-radius: 10px;
+    cursor: not-allowed;
+    margin-top: 10px;
+  }
+  
+  .meal-time {
+    margin: 20px 0;
+  }
+  
+  .meal-time p {
+    color: #333;
+  }
+  
+  .meal-card {
+    background-color: #9b59b6;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Meal Interface</title>
+    <link rel="stylesheet" href="stylesheet/meal.css">
+</head>
+<body>
+    <img class="background-image" src="j.jpg" alt="jnecPIc">
+    <div class="container">
+        <div class="calendar">
+            <div class="date">
+                <p id="day-name">Wed</p>
+                <p id="month-year">June 2024</p>
+                <p><strong id="day-number">29</strong></p>
+                <p id="time">12:00 PM</p>
+            </div>
+            <button class="today-button" disabled>Today</button>
+        </div>
+
+        <div class="meal-time">
+            <p>Breakfast</p>
+            <div class="meal-card" id="breakfast-meals">Meals</div>
+            <div class="button-container">
+                <input type="text" placeholder="Enter meal name" id="breakfast-name"/>
+                <button class="btn" onclick="addMeal('Breakfast')">Add</button>
+            </div>
+        </div>
+
+        <div class="meal-time">
+            <p>Lunch</p>
+            <div class="meal-card" id="lunch-meals">Meals</div>
+            <div class="button-container">
+                <input type="text" placeholder="Enter meal name" id="lunch-name"/>
+                <button class="btn" onclick="addMeal('Lunch')">Add</button>
+            </div>
+        </div>
+
+        <div class="meal-time">
+            <p>Dinner</p>
+            <div class="meal-card" id="dinner-meals">Meals</div>
+            <div class="button-container">
+                <input type="text" placeholder="Enter meal name" id="dinner-name"/>
+                <button class="btn" onclick="addMeal('Dinner')">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to add meals to localStorage
+        function addMeal(mealType) {
+            let mealName;
+            if (mealType === 'Breakfast') {
+                mealName = document.getElementById('breakfast-name').value;
+            } else if (mealType === 'Lunch') {
+                mealName = document.getElementById('lunch-name').value;
+            } else if (mealType === 'Dinner') {
+                mealName = document.getElementById('dinner-name').value;
+            }
+
+            if (!mealName) return alert('Please enter a meal name');
+
+            let meals = JSON.parse(localStorage.getItem(mealType)) || [];
+            meals.push(mealName);
+            localStorage.setItem(mealType, JSON.stringify(meals));
+            alert(`${mealName} added to ${mealType}`);
+            displayMeals(mealType);  // Update the meal list after adding
+        }
+
+        // Function to delete meal from localStorage
+        function deleteMeal(mealType, index) {
+            let meals = JSON.parse(localStorage.getItem(mealType)) || [];
+            meals.splice(index, 1); // Remove the meal at the specified index
+            localStorage.setItem(mealType, JSON.stringify(meals));
+            displayMeals(mealType); // Update the UI after deleting
+        }
+
+        // Function to display meals from localStorage with delete buttons
+        function displayMeals(mealType) {
+            const meals = JSON.parse(localStorage.getItem(mealType)) || [];
+            const mealCard = document.getElementById(`${mealType.toLowerCase()}-meals`);
+            mealCard.innerHTML = ''; // Clear existing meals
+
+            if (meals.length > 0) {
+                meals.forEach((meal, index) => {
+                    const mealDiv = document.createElement('div');
+                    mealDiv.innerHTML = `${meal} <button onclick="deleteMeal('${mealType}', ${index})">Delete</button>`;
+                    mealCard.appendChild(mealDiv);
+                });
+            } else {
+                mealCard.innerHTML = 'No meals available.';
+            }
+        }
+
+        // Display meals on page load
+        window.onload = function() {
+            displayMeals('Breakfast');
+            displayMeals('Lunch');
+            displayMeals('Dinner');
+        };
+    </script>
+</body>
+</html>

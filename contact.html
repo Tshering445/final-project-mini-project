@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Footer</title>
+    <style>
+        /* Footer Styling */
+        footer {
+            background-color: rgba(211, 211, 211, 0.6); /* Transparent light ash color */
+            color: black;
+            padding: 60px 30px; /* Increased padding */
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-heading {
+            font-size: 3em; /* Increased font size */
+            color: #ff6600;
+            margin-bottom: 20px; /* Increased margin */
+        }
+
+        .footer-text {
+            font-size: 1.5em; /* Increased font size */
+            margin-bottom: 30px; /* Increased margin */
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Increased gap between phone numbers */
+            margin-top: 20px;
+        }
+
+        .footer-link {
+            color: #ff6600;
+            font-size: 1.5em; /* Increased font size */
+            text-decoration: none;
+            padding: 12px 25px; /* Increased padding */
+            border: 2px solid #ff6600;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .footer-link:hover {
+            background-color: #ff6600;
+            color: white;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Increased gap between icons */
+            margin-top: 30px; /* Increased margin */
+        }
+
+        .social-icons a {
+            font-size: 2.5em; /* Increased font size */
+            color: blue; /* Changed icon color to blue */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: darkblue; /* Darker blue on hover */
+        }
+
+        @media (max-width: 768px) {
+            .footer-heading {
+                font-size: 2.5em; /* Adjusted for smaller screens */
+            }
+            .footer-text {
+                font-size: 1.2em; /* Adjusted for smaller screens */
+            }
+            .footer-contact {
+                flex-direction: column;
+                gap: 20px; /* Adjusted for smaller screens */
+            }
+            .footer-link {
+                font-size: 1.3em; /* Adjusted for smaller screens */
+            }
+            .social-icons a {
+                font-size: 2em; /* Adjusted for smaller screens */
+            }
+        }
+    </style>
+    <!-- Link to Font Awesome for social media icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Your Content Goes Here -->
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <h3 class="footer-heading">Contact Us</h3>
+            <p class="footer-text">We would love to hear from you! Reach out to us for any inquiries or assistance.</p>
+            <div class="footer-contact">
+                <p>Phone: 
+                    <a href="tel:+97517423690" class="footer-link">+975 17423690</a> 
+                    or
+                    <a href="tel:+97577712842" class="footer-link">+975 77712842</a>
+                </p>
+            </div>
+            <div class="social-icons">
+                <a href="https://wa.me/+97517423690" target="_blank" class="footer-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="footer-link"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:example@example.com" class="footer-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
